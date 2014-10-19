@@ -1,11 +1,12 @@
 @media screen{
-    head{text-align: center;
+    <!--head{text-align: center;
     margin: 50% auto;}
     h1{color:white;
-    font-family:comicsansm;
-    font-size: 50px;}
-    body{background-color: blue;
-        font-family:comicsansm;
+    font-family:Arial;
+    font-size: 50px;}-->
+    body{
+        background-color:rgb(26,32,94);
+        font-family:Arial;
         color:white;
     }
     .mitte {margin:0px auto;
@@ -19,7 +20,7 @@
 
    }
    #weiß {
-       font-family: courier;
+       font-family: Arial;
        color: white;
        font-weight: bold;
    }

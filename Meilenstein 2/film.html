@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Film</title>
+    <style type="text/css">
+        form {
+            text-align: left;
+        }
+        form label {
+            width: 400px;
+            text-align: justify;
+        }
+        form *{
+            width: 300px;
+            margin-left: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div style="width:300px; margin:0px auto;">
+    <h1>Film</h1>(zur&uuml;ck)
+</div>
+<!-- Übertragen der Felder-->
+<form action="http://martinakraus.net/immdb.php" method="get">
+    <label for="filmtitel">Filmtitel</label>
+    <input type="text" name="filmtitel"/> <br/>
+
+    <label for="regie">Regie</label>
+    <input type="text" name="regie"/><br/>
+
+    <label for="drehbuch">Drehbuch</label>
+    <input type="text" name="filmtitel"/><br/>
+
+    <label for="filmerscheinungsjahr">Erscheinungsjahr</label>
+    <input type="text" name="filmerscheinungsjahr"/><br/>
+
+    <label for="schauspieler">Schauspieler</label>
+    <textarea name="schauspieler"></textarea><br/>
+
+    <!--Dropdown Menü mit selektierung von Horror-->
+    <label for="filmgenre">Filmgenre</label>
+    <select name="filmgenre" size="1">
+        <option value="horror" selected="selected">Horror</option>
+        <option value="psycho">Psycho</option>
+        <option value="krimi">Krimi</option>
+        <option value="doku">Doku</option>
+        <option value="komoedie">Kom&uuml;die</option>
+        <option value="romanze">Romanze</option>
+    </select><br/>
+
+    <!--Checkbox-->
+    <label for="filmfavorit">Als Favorit merken</label>
+    <input type="checkbox" name="filmfavorit"/><br/>
+
+    <!--Absenden Button-->
+    <button type="submit" name="Film" value="FilmAbsenden">Film absenden</button>
+
+</form>
+</body>
+</html>
