@@ -1,13 +1,13 @@
 <html>
-<link rel = "stylesheet" media="screen" href="music.css"/>
+<link rel = "stylesheet" media="screen" href="music_film.css"/>
 
 <head>
     <title>Film</title>
-    <div id="platzhalter"> <img src="025Pikachu_OS_anime_4.png" alt="Pika" width="100px" border="5px" align="right"/> </div>
+    <div id="platzhalter"> <img src="025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
     <div class="mitte">
         <table>
             <tr>
-                <td><h1>Film</h1></td><td><p><a href="home.html" id="weiß">(zur&uuml;ck)</a></p></td>
+                <td><h1>Film</h1></td><td><p><a href="home.html" id="weis">(zur&uuml;ck)</a></p></td>
             </tr>
         </table>
     </div>
@@ -19,28 +19,33 @@
     <table id="weiß">
 
         <tr>
-            <td>Filmtitel</td>
-            <td><input type = "text" size = "30" maxlength = "50"/> </td>
+            <td><div class="size">Filmtitel</div></td>
+            <td><input type = "text" name="filmtitel" size = "30" maxlength = "50"/> </td>
         </tr>
 
         <tr>
-            <td>Regie</td>
-            <td><input type = "text" size = "30" maxlength = "50"/> </td>
+            <td><div class="size">Regie</div></td>
+            <td><input type = "text" name="regie" size = "30" maxlength = "50"/> </td>
         </tr>
 
         <tr>
-            <td>Drehbuch</td>
-            <td><input type = "text" size = "30" maxlength = "50"/> </td>
+            <td><div class="size">Drehbuch</div></td>
+            <td><input type = "text" name="drehbuch" size = "30" maxlength = "50"/> </td>
+        </tr>
+
+		<tr>
+            <td><div class="size">Erscheinungsjahr</div></td>
+            <td><input type = "text" name="filmerscheinungsjahr" size = "30" maxlength = "50"/> </td>
         </tr>
 
         <tr>
-            <td>Schauspieler</td>
-            <td><textarea name = "songs" cols="32" rows ="5"></textarea> </th>
+            <td><div class="size">Schauspieler</div></td>
+            <td><textarea name = "schauspieler" cols="32" rows ="5"></textarea> </th>
         </tr>
 
 
         <tr>
-            <td>Genre</td>
+            <td><div class="size">Genre</div></td>
             <td><select name="filmgenre" size="1">
                     <option value="horror" selected="selected">Horror</option>
                     <option value="psycho">Psycho</option>
@@ -54,7 +59,7 @@
         </tr>
 
         <tr>
-            <td>Als Favorit <br>markieren</td>
+            <td><div class="size">Als Favorit <br>markieren</div></td>
             <td><input type ="checkbox" name="filmfavorit" /><br/></td>
         </tr>
 

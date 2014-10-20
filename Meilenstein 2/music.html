@@ -1,9 +1,9 @@
 <html>
-<link rel = "stylesheet" media="screen" href="music.css"/>
+<link rel = "stylesheet" media="screen" href="music_film.css"/>
 
 <head>
     <title>Music</title>
-    <div id="platzhalter"> <img src="025Pikachu_OS_anime_4.png" alt="Pika" width="100px" border="5px" align="right"/> </div>
+    <div id="platzhalter"> <img src="025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
     <div class="mitte">
         <table>
             <tr>
@@ -19,28 +19,28 @@
 <table id="weiß">
 
     <tr>
-        <td>Interpreter</td>
-        <td><input type = "text" size = "30" maxlength = "50"/> </td>
+        <td><div class="size">Interpreter</div></td>
+        <td><input type = "text" name="interpreter" size = "30" maxlength = "50"/> </td>
     </tr>
 
     <tr>
-        <td>Albumtitel</td>
-        <td><input type = "text" size = "30" maxlength = "50"/> </td>
+        <td><div class="size">Albumtitel</div></td>
+        <td><input type = "text" name="albumtitel" size = "30" maxlength = "50"/> </td>
     </tr>
 
     <tr>
-        <td>Erscheinungsjahr</td>
-        <td><input type = "text" size = "30" maxlength = "50"/> </td>
+        <td><div class="size">Erscheinungsjahr</div></td>
+        <td><input type = "text" name="musicerscheinungsjahr" size = "30" maxlength = "50"/> </td>
     </tr>
 
     <tr>
-        <td>Songs</td>
+        <td><div class="size">Songs</div></td>
         <td><textarea name = "songs" cols="32" rows ="5"></textarea> </th>
     </tr>
 
 
     <tr>
-        <td>Genre</td>
+        <td><div class="size">Genre</div></td>
         <td><select name="musicgenre" size="1">
             <option value = "punk">Punk</option>
             <option value = "metal">Metal</option>
@@ -53,7 +53,7 @@
     </tr>
 
     <tr>
-        <td>Als Favorit <br>markieren</td>
+        <td><div class="size">Als Favorit <br>markieren</div></td>
         <td><input type ="checkbox" name="musicfavorit" /><br/></td>
     </tr>
 
