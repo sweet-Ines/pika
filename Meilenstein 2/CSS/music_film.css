@@ -4,16 +4,7 @@
     h1{color:white;
     font-family:Arial;
     font-size: 50px;}-->
-    body{
-        background-color:rgb(26,32,94);
-        font-family:Arial;
-        color:white;
-    }
-	
-     a {
-         color: white;
-         text-decoration: none;
-     }
+
     .mitte {margin:0px auto;
 
     text-align: center;}
@@ -21,8 +12,8 @@
     .mitte table{text-align: center;
         margin-left: 40%;
     }
-	.size{
-		font-size:14px;
+
+
    #rechts{
 
    }
@@ -33,11 +24,7 @@
    }
 
  
-   #platzhalter{
-       border: white 2px solid;
-       float: right;
-       height: 100px;
-   }
+
 
 
 
