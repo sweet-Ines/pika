@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="de">
     <meta charset="UTF-8">
     <title>Favoriten</title>
     <link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
     <link rel = "stylesheet" media="screen" href="CSS/Box.css"/>
-
-    <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
+    <link rel = "stylesheet" media="screen" href="CSS/favoriten.css"/>
+    <script type="text/javascript" src="JavaScript/favoriten.js"></script>
+    <script>
+        x='JavaScript/film.json';
+        y=jsonparse(x);
+        alert(y);
+        //json=detectTable(x);
+        //alert(json);
+    </script>
 </head>
 <body>
+<div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
 <div id="title">
     <span class="rot">M</span>eine<span class="rot">F</span>avoriten
 </div>
