@@ -6,7 +6,8 @@
     <link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
     <link rel = "stylesheet" media="screen" href="CSS/Box.css"/>
     <link rel = "stylesheet" media="screen" href="CSS/favoriten.css"/>
-    <script type="text/javascript" src="JavaScript/favoriten.js"></script>
+    <script type="text/javascript" src="../JavaScript/favoriten.js"></script>
+
     <script>
         x='JavaScript/film.json';
         y=jsonparse(x);
@@ -15,11 +16,11 @@
         //alert(json);
     </script>
 </head>
-<body>
+<body onload="onload()">
 <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
 <div id="title">
     <span class="rot">M</span>eine<span class="rot">F</span>avoriten
 </div>
-<div class="boxy"><div class="left">Meine Musikfavoriten</div><div class="right">Meine Filmfavortiten</div></div>
+<div class="boxy"><div class="left" onclick="onClickmusik()">Meine Musikfavoriten</div><div class="right" onclick="onClickfilm()">Meine Filmfavortiten</div></div>
 </body>
 </html>
