@@ -6,21 +6,18 @@
     <link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
     <link rel = "stylesheet" media="screen" href="CSS/Box.css"/>
     <link rel = "stylesheet" media="screen" href="CSS/favoriten.css"/>
-    <script type="text/javascript" src="../JavaScript/favoriten.js"></script>
-
-    <script>
-        x='JavaScript/film.json';
-        y=jsonparse(x);
-        alert(y);
-        //json=detectTable(x);
-        //alert(json);
-    </script>
+    <script type="text/javascript" src="JavaScript/favoriten2.js"></script>
 </head>
-<body onload="onload()">
+<body>
+</div class="wrapper">
 <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
 <div id="title">
     <span class="rot">M</span>eine<span class="rot">F</span>avoriten
 </div>
-<div class="boxy"><div class="left" onclick="onClickmusik()">Meine Musikfavoriten</div><div class="right" onclick="onClickfilm()">Meine Filmfavortiten</div></div>
+<div class="boxy"><div class="left" id="musicfavorite" onclick="button(this)">Meine Musikfavoriten</div><div class="right" id="moviefavorite" onclick="button(this)">Meine Filmfavortiten</div>
+
+</div>
+<div id="Tabelle"></div>
+</div>
 </body>
 </html>
