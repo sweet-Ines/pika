@@ -1,9 +1,11 @@
 <html>
 <link rel = "stylesheet" media="screen" href="CSS/music_film.css"/>
 <link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
+<script type="text/javascript" src="../Meilenstein%204/JavaScript/ueberpruefung.js"></script>
 
 <head>
     <title>Music</title>
+    <meta charset="utf-8"/>
     <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
     <div class="mitte">
         <table>
@@ -17,27 +19,27 @@
 
 </head>
 <body>
-<form action="http://martinakraus.net/immdb.php" method="get">
+<form action="http://martinakraus.net/immdb.php" method="get" name="form" onsubmit="return validateForm()" novalidate='true'>
 <table id="weiß">
 
     <tr>
         <td><div class="size">Interpreter</div></td>
-        <td><input type = "text" name="interpreter" size = "30" maxlength = "50"/> </td>
+        <td><input type = "text" name="interpreter" size = "30" minlength="2" maxlength = "50" required="true" pattern='^[^0-9\.\,\"\?\!\;\:\#\$\%\&\(\)\*\+\-\/\<\>\=\@\[\]\\\^\_\{\}\|\~]+$'/> </td>
     </tr>
 
     <tr>
         <td><div class="size">Albumtitel</div></td>
-        <td><input type = "text" name="albumtitel" size = "30" maxlength = "50"/> </td>
+        <td><input type = "text" name="albumtitel" size = "30" minlength="2" maxlength = "50" required="true" pattern='^[^\.\,\"\?\!\;\:\#\$\%\&\(\)\*\+\-\/\<\>\=\@\[\]\\\^\_\{\}\|\~]+$'/> </td>
     </tr>
 
     <tr>
         <td><div class="size">Erscheinungsjahr</div></td>
-        <td><input type = "text" name="musicerscheinungsjahr" size = "30" maxlength = "50"/> </td>
+        <td><input type = "date" name="musicerscheinungsjahr" size = "30" minlength="2" max="2014-12-31" required="true" pattern="([0-9])+"/> </td>
     </tr>
 
     <tr>
         <td><div class="size">Songs</div></td>
-        <td><textarea name = "songs" cols="32" rows ="5"></textarea> </th>
+        <td><textarea name = "songs" cols="32" rows ="5" required="true" pattern="^[a-zA-Z,]+$"></textarea> </th>
     </tr>
 
 
