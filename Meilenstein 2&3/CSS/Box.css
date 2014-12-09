@@ -20,7 +20,7 @@
         font-family: Arial;
     }
 
-    .left:hover{
+   div.left:hover{
         color: black;
         background-color: rgb(165,169,230);
         cursor: pointer;
@@ -39,9 +39,9 @@
     }
 
 
-    .right:hover{
+    div.right:hover{
         color: black;
-        background-color: rgb(165,169,230);
+        background-color: rgb(165,169,230)!important;
         cursor: pointer;
     }
 }

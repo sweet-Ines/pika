@@ -78,7 +78,9 @@ function erstelleTabelle() {
 Verwaltet die Hintergrundfarbe während des Wechseln der Button, sowie den Aufruf der Load funktion
  */
 function button(id2){
+
     id2.style.backgroundColor="rgb(0,162,232)";
+
     if(id2.id=="musicfavorite") {
         Load('Javascript/musik.json');
 
@@ -86,5 +88,12 @@ function button(id2){
     }
     else{
         Load('Javascript/film.json');
-    window.document.getElementById("musicfavorite").style.background="";}
+    window.document.getElementById("musicfavorite").style.background="";
+    }
+}
+
+function onload(){
+    window.document.getElementById("moviefavorite").style.backgroundColor="rgb(0,162,232)";
+    Load('Javascript/film.json');
+
 }
