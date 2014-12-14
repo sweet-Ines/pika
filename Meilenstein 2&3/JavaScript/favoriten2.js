@@ -82,12 +82,12 @@ function button(id2){
     id2.style.backgroundColor="rgb(0,162,232)";
 
     if(id2.id=="musicfavorite") {
-        Load('C:\xampp\htdocs\WAW\trunk\Meilenstein5\php\getFavorites.php');
+        Load('Javascript/musik.json');
 
         window.document.getElementById("moviefavorite").style.background = "";
     }
     else{
-        Load('C:\xampp\htdocs\WAW\trunk\Meilenstein5\php\getFavorites.php');
+        Load('Javascript/film.json');
     window.document.getElementById("musicfavorite").style.background="";
     }
 }
