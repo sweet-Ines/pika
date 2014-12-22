@@ -7,9 +7,15 @@
     <link rel = "stylesheet" media="screen" href="CSS/Box.css"/>
     <link rel = "stylesheet" media="screen" href="CSS/favoriten.css"/>
     <script type="text/javascript" src="JavaScript/favoriten2.js"></script>
+
+
 </head>
 <body onload="onload()">
-</div class="wrapper">
+<form action="../Meilenstein5/php/getFavorites.php" method="GET">
+<input type="submit" name = "favBtn" value = "Film Favoriten"/>
+<input type="submit" name = "favBtn" value = "Musik Favoriten"/>
+    </form>
+
 <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
 <div id="title">
     <span class="rot">M</span>eine<span class="rot">F</span>avoriten
@@ -18,6 +24,6 @@
 
 </div>
 <div id="Tabelle"></div>
-</div>
+
 </body>
 </html>

@@ -1,31 +1,40 @@
 <?php
 
 
-$name=$_GET['id'];
-if($name=="film")
-{
-    $my_file = 'C:\xampp\htdocs\WAW\trunk\Meilenstein5\textfiles\film.txt'; //TODO
-    $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+$name=$_GET["Absenden"];
+//if($name=="film")
 
-    fwrite($handle,$name["filmtitel"]);
-    fwrite($handle,", ");
-    fwrite($handle,$name["regie"]);
-    fwrite($handle,", ");
-    fwrite($handle,$name["drehbuch"]);
-    fwrite($handle,", ");
-    fwrite($handle,$name["filmerscheinungsjahr"]);
-    fwrite($handle,", ");
-    fwrite($handle,$name["schauspieler"]);
-    fwrite($handle,", ");
-    fwrite($handle,$name["filmgenre"]);
+//echo $_POST["FilmAbsenden"];
+echo $_GET["drehbuch"];
+echo $_GET["filmtitel"];
+echo $_GET["Absenden"];
 
-    fwrite($handle,"\r\n");
+
+if($name == "Film") {
+    echo "hallo";
+    $my_file = 'film.txt.txt'; //TODO
+    $handle = fopen($my_file, 'w') or die('Cannot open file:  ' . $my_file);
+
+    fwrite($handle, $_GET["filmtitel"]);
+    fwrite($handle, ", ");
+    fwrite($handle, $_GET["regie"]);
+    fwrite($handle, ", ");
+    fwrite($handle, $_GET["drehbuch"]);
+    fwrite($handle, ", ");
+    fwrite($handle, $_GET["filmerscheinungsjahr"]);
+    fwrite($handle, ", ");
+    fwrite($handle, $_GET["schauspieler"]);
+    fwrite($handle, ", ");
+    fwrite($handle, $_GET["filmgenre"]);
+
+    fwrite($handle, "\r\n");
 
     fclose($handle);
-
-}elseif($name=="music")
+}
+//}else
+if($name=="music")
 {
-    $my_file = 'C:\Users\Ines\Documents\IB\WAW\trunk\Meilenstein5\textfiles\music.txt';//TODO
+    $my_file = '..\textfiles\music.txt.txt';//TODO
     $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 
     fwrite($handle,$name["interpreter"]);

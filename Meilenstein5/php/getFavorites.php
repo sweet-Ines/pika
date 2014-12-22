@@ -1,18 +1,26 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Ines
- * Date: 12.12.2014
- * Time: 21:22
- */
-$id=$_GET['id'];
-if($id=="musicfavorite"){
-    $string = file_get_contents('C:\xampp\htdocs\WAW\trunk\Meilenstein 2&3\JavaScript\musik.json'); //TODO SON Pfad
-}
-elseif($id=="moviefavorite"){
-    $string = file_get_contents('C:\xampp\htdocs\WAW\trunk\Meilenstein 2&3\JavaScript\film.json'); // TODO JSON Pfad
-}
+    <?php
+$name = $_GET["favBtn"];
 
-
-return $string;
+ if($name=="Musik Favoriten"){
+        $jsonData = file_get_contents("musik.json");
+        $obj = (array) json_decode($jsonData,true);
+        $alben = $obj["favoriten"];
+        foreach ($alben as $key => $value) {
+            echo "<h2>favorite $key</h2>";
+            foreach ($value as $k => $v) {
+                echo "$k | $v <br />";
+            }
+        }
+ }
+ elseif($name=="Film Favoriten"){
+     $jsonData = file_get_contents("film.json");
+     $obj = (array) json_decode($jsonData,true);
+     $filme = $obj["favoriten"];
+     foreach ($filme as $key => $value) {
+         echo "<h2>favorite $key</h2>";
+         foreach ($value as $k => $v) {
+             echo "$k | $v <br />";
+         }
+     }
+ }
 ?>
