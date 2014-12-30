@@ -37,7 +37,7 @@ if($name == "Film"){
 
 
         //Daten in DB speichern
-        $sql_befehl = mysql_query("INSERT INTO FILM (Ftitel, Regie, Drehbuch,  Schauspieler, Erscheinungsjahr, Filmgenre, Drehbuch, fav, Genre) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."','".$_GET["filmgenre"]."')");
+        $sql_befehl = mysql_query("INSERT INTO FILM (Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."','".$_GET["filmgenre"]."')");
 
 
         if($sql_befehl)
