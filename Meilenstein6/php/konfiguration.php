@@ -15,5 +15,5 @@ define ( 'MYSQL_BENUTZER',  'root' );
 define ( 'MYSQL_KENNWORT',  '' );
 
 // für unser Bsp. nennen wir die DB adressverwaltung
-define ( 'MYSQL_DATENBANK', 'waw' );
+define ( 'MYSQL_DATENBANK', 'waw2' );
 ?>

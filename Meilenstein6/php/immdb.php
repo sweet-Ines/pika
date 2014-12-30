@@ -37,7 +37,7 @@ if($name == "Film"){
 
 
         //Daten in DB speichern
-        $sql_befehl = mysql_query("INSERT INTO FILM (Ftitel, Regie, Drehbuch,  Schauspieler, Erscheinungsjahr, Filmgenre, Drehbuch, fav) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."')");
+        $sql_befehl = mysql_query("INSERT INTO FILM (Ftitel, Regie, Drehbuch,  Schauspieler, Erscheinungsjahr, Filmgenre, Drehbuch, fav, Genre) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."','".$_GET["filmgenre"]."')");
 
 
         if($sql_befehl)
@@ -86,7 +86,7 @@ if($name=="music"){
 
 
         //Daten in DB speichern
-        $sql_befehl = mysql_query("INSERT INTO ALBUM (ATitel, Jahr, Songs, Interpreter, fav) VALUES ('".$_GET["albumtitel"]."','".$_GET["musicerscheinungsjahr"]."','".$_GET["songs"]."','".$_GET["interpreter"]."','".$_GET["musicfavorit"]."')");
+        $sql_befehl = mysql_query("INSERT INTO ALBUM (ATitel, Jahr, Songs, Interpreter, fav, Genre) VALUES ('".$_GET["albumtitel"]."','".$_GET["musicerscheinungsjahr"]."','".$_GET["songs"]."','".$_GET["interpreter"]."','".$_GET["musicfavorit"]."','".$_GET["musicgenre"]."')");
 
 
         if($sql_befehl)
