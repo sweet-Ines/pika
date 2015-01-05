@@ -112,7 +112,7 @@ $name = $_GET["type"];
     }
 
         //Verbindung beenden
-      mysqli_close($db_link);
+      mysqli_close($datenbank);
 
 
 
