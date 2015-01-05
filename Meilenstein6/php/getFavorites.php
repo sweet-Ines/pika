@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$name = $_GET["q"];
+$name = $_GET["type"];
 
     try {
         require_once('konfiguration.php');
@@ -13,7 +13,7 @@ $name = $_GET["q"];
         mysqli_set_charset($datenbank, 'utf8');
 
 
-        if ($name == "Musik Favoriten") {
+        if ($name == "Musik") {
 
             $sql = "SELECT * FROM ALBUM";
             $result = mysqli_query($datenbank, $sql);
@@ -55,7 +55,7 @@ $name = $_GET["q"];
 
             }
             */
-        } elseif ($name == "Film Favoriten") {
+        } elseif ($name == "Film") {
 
             $sql = "SELECT * FROM FILM";
             $result = mysqli_query($datenbank, $sql);

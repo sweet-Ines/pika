@@ -82,18 +82,18 @@ function button(id2){
     id2.style.backgroundColor="rgb(0,162,232)";
 
     if(id2.id=="musicfavorite") {
-        Load('Javascript/musik.json');
+        Load('127.0.0.1/Meilenstein6/php/getFavorites.php?type=Musik');
 
         window.document.getElementById("moviefavorite").style.background = "";
     }
     else{
-        Load('Javascript/film.json');
+        Load('127.0.0.1/Meilenstein6/php/getFavorites.php?type=Film');
     window.document.getElementById("musicfavorite").style.background="";
     }
 }
 
 function onload(){
     window.document.getElementById("moviefavorite").style.backgroundColor="rgb(0,162,232)";
-    Load('Javascript/film.json');
+    Load('127.0.0.1/Meilenstein6/php/getFavorites.php?type=Film');
 
 }
