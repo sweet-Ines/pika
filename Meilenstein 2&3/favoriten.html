@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head lang="de">
-    <meta http-equiv="Content-Type" content="application/json; charset=utf-8">
-    <title>Favoriten</title>
-    <link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
-    <link rel = "stylesheet" media="screen" href="CSS/Box.css"/>
-    <link rel = "stylesheet" media="screen" href="CSS/favoriten.css"/>
-    <script type="text/javascript" src="JavaScript/favoriten2.js"></script>
-
-    <script>
-        function sendRequest() {
-            var xmlhttp=new XMLHttpRequest();
-            xmlhttp.onreadystatechange=function() {
-                //Wenn der Request ankam und ok (200) war dann tue folgendes:
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    //der gesendete ResponseText vom Server wird in ein JSON File geparst
-                    var jsonObject = $.parseJSON(xmlhttp.responseText);
-                    //Hier kann nun normal wie bisher bekannt mit dem JSON-Objekt umgegangen werden.
-                }
-            }
-            //Hier wird angegeben welche HTTP-Methode und an welche PHP-Datei der Request gesendet wird
-            xmlhttp.open("GET","hsmannheim.php");
-            xmlhttp.send();
-        }
-    </script>
-
+    <meta charset="UTF-8">
+    <title>Meine Favoriten</title>
+    <link rel="stylesheet" href="../../../Desktop/waw/wawonderland-master/Meilenstein6/css/favoriten.css" />
+    <script type="text/javascript" src="../../../Desktop/waw/wawonderland-master/Meilenstein6/js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/favoriten.js"></script>
 </head>
-<body onload="onload()">
-<form action="../Meilenstein6/php/getFavorites.php" method="GET">
-<input type="submit" name = "favBtn" onclick="sendRequest()" value = "Film Favoriten"/>
-<input type="submit" name = "favBtn" onclick="sendRequest()" value = "Musik Favoriten"/>
-    </form>
+<body>
+<div>
+        <div class="headder">
+            <r>M</r>eine <r>F</r>avoriten
+        </div>
+         <a href="home.html">
+            (zur&uuml;ck)
+         </a>
 
-<div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
-<div id="title">
-    <span class="rot">M</span>eine<span class="rot">F</span>avoriten
+         <div class="box">
+                <span id="musicButton"class="buttons" onclick="loadJsonFiles('music');">
+                    Meine Musikfavoriten
+                </span>
+                <span id="movieButton"class="buttons" onclick="loadJsonFiles('movie');">
+                    Meine Filmfavoriten
+                </span>
+         </div>
 </div>
-<div class="boxy"><div class="left" id="musicfavorite" onclick="button(this) ">Meine Musikfavoriten</div><div class="right" id="moviefavorite" onclick="button(this)">Meine Filmfavortiten</div>
+<div class="insertPlace">
+    <table id="insert">
+ 
+    </table>
+ </div>
 
-</div>
-<div id="Tabelle"></div>
 
+
+<div class="logo"><img src="../../../Desktop/waw/wawonderland-master/Meilenstein6/images/logo.png" alt="logo"></div>
 </body>
 </html>

@@ -1,49 +1,41 @@
-    <?php
+<?php
+header('Content-Type: application/json');
 
-$name = $_GET["favBtn"];
-
-/*
- * $sql=mysql_query("select * from Posts limit 20");
-
-$response = array();
-$posts = array();
-$result=mysql_query($sql);
-while($row=mysql_fetch_array($result))
-{
-$title=$row['title'];
-$url=$row['url'];
-
-$posts[] = array('title'=> $title, 'url'=> $url);
-
-}
-
-$response['posts'] = $posts;
-
-$fp = fopen('results.json', 'w');
-fwrite($fp, json_encode($response));
-fclose($fp);
- */
-
+$name = $_GET["q"];
 
     try {
-        require_once ('konfiguration.php');
-        $db_link = mysqli_connect (MYSQL_HOST, MYSQL_BENUTZER, MYSQL_KENNWORT, MYSQL_DATENBANK);
+        require_once('konfiguration.php');
+        $datenbank = mysqli_connect (
+            MYSQL_HOST,
+            MYSQL_BENUTZER,
+            MYSQL_KENNWORT,
+            MYSQL_DATENBANK) or die ("Verbindung fehlgeschlagen: ".mysql_error());
+        mysqli_set_charset($datenbank, 'utf8');
 
 
         if ($name == "Musik Favoriten") {
-            $sql = "SELECT ATitel, Jahr, Songs, Interpreter, Genre FROM ALBUM";
 
-            $response = array();
-            $posts = array();
-            $result = mysqli_query($db_link, $sql);
+            $sql = "SELECT * FROM ALBUM";
+            $result = mysqli_query($datenbank, $sql);
+            $albums = array();
+
             if (!$result) {
                 die('Ungültige Abfrage!');
             }
-            else{
+            while($row = mysqli_fetch_assoc($result)){
+                $albums[] = $row;
+            }
 
-                //$result=mysql_query($sql);
-                while($row=mysql_fetch_array($result))
+            print json_encode($albums);
+
+            /*
+            else{
+            //    $rows = array();
+
+                while($row=mysqli_fetch_assoc($result))
                 {
+              //      $rows[] = $row;
+
 
                     $title=$row['Atitel'];
                     $year=$row['Jahr'];
@@ -53,15 +45,32 @@ fclose($fp);
 
 
                     $posts[] = array('Albumtitel'=> $title, 'Erscheinungsjahr'=> $year, 'Songs'=>$song, 'Interpreter'=>&$inpret, 'Genre'=>$mgenre);
+
+
                 }
 
-                $response['posts'] = $posts;
+                echo json_encode($posts);
+               // $response['posts'] = $posts;
 
-                $fp = fopen('..\json\musikNeu.json', 'w');
-                fwrite($fp, json_encode($response));
-                fclose($fp);
+
             }
+            */
         } elseif ($name == "Film Favoriten") {
+
+            $sql = "SELECT * FROM FILM";
+            $result = mysqli_query($datenbank, $sql);
+            $filme = array();
+
+            if (!$result) {
+                die('Ungültige Abfrage!');
+            }
+            while($row = mysqli_fetch_assoc($result)){
+                $filme[] = $row;
+            }
+
+            print json_encode($filme);
+
+            /*
             $sql = "SELECT Ftitel, Regie, Schauspieler, Erscheinungsjahr,  Drehbuch, Genre FROM FILM";
 
 
@@ -93,15 +102,17 @@ fclose($fp);
                 $fp = fopen('..\json\filmNeu.json', 'w');
                 fwrite($fp, json_encode($response));
                 fclose($fp);
+
+            */
         }
-    }
+
     }
     catch (Exception $ex){
         echo $ex=getMessage();
     }
 
         //Verbindung beenden
-      mysql_close($db_link);
+      mysqli_close($db_link);
 
 
 

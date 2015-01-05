@@ -3,7 +3,6 @@
 $name=$_GET["Absenden"];
 
 if($name == "Film"){
-    require_once ('konfiguration.php');
 
     //Film
     $filmtitel=$_GET["filmtitel"];
@@ -12,51 +11,59 @@ if($name == "Film"){
     $filmerscheinungsjahr=$_GET["filmerscheinungsjahr"];
     $schauspieler=$_GET["schauspieler"];
     $filmgenre=$_GET["filmgenre"];
+    $fav=$_GET["filmfavorit"];
 
-
-    if(($filmtitel == "") OR ($regie == "") OR ($drehbuch == "") OR ($filmerscheinungsjahr == "") OR ($schauspieler == "") OR ($filmgenre == "")){
-        echo "Fehler: Eintrag unvollständig.";
-        die;
+    if($fav == "on"){
+        $fav = 1;
+    } else {
+        $fav = 0;
     }
 
-    //TODO
+    if(
+        ($filmtitel == "") OR
+        ($regie == "") OR
+        ($drehbuch == "") OR
+        ($filmerscheinungsjahr == "") OR
+        ($schauspieler == "") OR
+        ($filmgenre == "")){
+            echo "Fehler: Eintrag unvollständig.";
+            die;
+    }
+
     //Verbindung herstellen
-    $datenbank = mysqli_connect (MYSQL_HOST, MYSQL_BENUTZER, MYSQL_KENNWORT, MYSQL_DATENBANK) or die ("Verbindung fehlgeschlagen: ".mysql_error());
+    require_once('konfiguration.php');
+    $datenbank = mysqli_connect (
+        MYSQL_HOST,
+        MYSQL_BENUTZER,
+        MYSQL_KENNWORT,
+        MYSQL_DATENBANK) or die ("Verbindung fehlgeschlagen: ".mysql_error());
     mysqli_set_charset($datenbank, 'utf8');
-   // mysql_select_db("Datenbank-Name") or die ("Datenbank existiert nicht");
+
 
     if ( $datenbank )
     {
-        echo 'Verbindung erfolgreich: ';
-        //print_r( $db_link);
+        echo 'Verbindung erfolgreich:';
+        //$sql_befehl1 = mysql_query("INSERT INTO FILM (Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."','".$_GET["filmgenre"]."')");
 
-        //$abfrage = "SELECT COUNT(FID) FROM FILM";
-        //$ergebnis = mysql_query($abfrage);
-        //$menge = mysql_fetch_row($ergebnis);
+        //$sql_test = mysqli_query($datenbank, "SELECT * FROM FILM");
+        $sql_write = mysqli_query($datenbank, "INSERT INTO FILM(Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('$filmtitel','$regie','$schauspieler','$filmerscheinungsjahr','$drehbuch','$fav','$drehbuch')");
 
-
-
-        //Daten in DB speichern
-        $sql_befehl = mysql_query("INSERT INTO FILM (Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."','".$_GET["filmgenre"]."')");
-
-
-        if($sql_befehl)
-        { echo "Ihr Eintrag wurde hinzugefügt."; }
+        if($sql_write){
+            echo "Ihr Eintrag wurde hinzugefügt.";
+        }
+        echo 'hello';
     }
     else
     {
-
         die('Keine Verbindung möglich! ');
     }
 
 
 //Verbindung beenden
-    mysql_close($datenbank);
+    mysqli_close($datenbank);
 }
 
-if($name=="music"){
-
-    require_once ('konfiguration.php');
+if($name=="Album"){
 
     //Musik
     $interpreter=$_GET["interpreter"];
@@ -64,7 +71,13 @@ if($name=="music"){
     $musikerscheinungsjahr=$_GET["musicerscheinungsjahr"];
     $songs=$_GET["songs"];
     $musikgenre=$_GET["musicgenre"];
+    $fav=$_GET["musicfavorit"];
 
+    if($fav == "on"){
+        $fav = 1;
+    } else {
+        $fav = 0;
+    }
 
 
     if(($interpreter == "") OR ($albumtitel= "") OR ($musikerscheinungsjahr== "") OR ($songs == "") OR ($musikgenre == "")){
@@ -74,31 +87,31 @@ if($name=="music"){
 
 
     //Verbindung herstellen
-    $datenbank = mysqli_connect (MYSQL_HOST, MYSQL_BENUTZER, MYSQL_KENNWORT, MYSQL_DATENBANK) or die ("Verbindung fehlgeschlagen: ".mysql_error());
+    require_once('konfiguration.php');
+    $datenbank = mysqli_connect (
+        MYSQL_HOST,
+        MYSQL_BENUTZER,
+        MYSQL_KENNWORT,
+        MYSQL_DATENBANK) or die ("Verbindung fehlgeschlagen: ".mysql_error());
     mysqli_set_charset($datenbank, 'utf8');
-   // mysql_select_db("Datenbank-Name") or die ("Datenbank existiert nicht");
 
 
     if ( $datenbank )
     {
         echo 'Verbindung erfolgreich: ';
-        //print_r( $db_link);
+       // $sql_befehl = mysql_query("INSERT INTO ALBUM (ATitel,Jahr,Songs,Interpreter,fav,Genre) VALUES ('".$_GET["albumtitel"]."','".$_GET["musicerscheinungsjahr"]."','".$_GET["songs"]."','".$_GET["interpreter"]."','".$_GET["musicfavorit"]."','".$_GET["musicgenre"]."')");
+        $sql_write = mysqli_query($datenbank, "INSERT INTO ALBUM(ATitel, Jahr, Songs, Interpreter, fav, Genre) VALUES ('$albumtitel','$musikerscheinungsjahr','$songs','$interpreter','$fav','Metal')");
 
-
-        //Daten in DB speichern
-        $sql_befehl = mysql_query("INSERT INTO ALBUM (ATitel, Jahr, Songs, Interpreter, fav, Genre) VALUES ('".$_GET["albumtitel"]."','".$_GET["musicerscheinungsjahr"]."','".$_GET["songs"]."','".$_GET["interpreter"]."','".$_GET["musicfavorit"]."','".$_GET["musicgenre"]."')");
-
-
-        if($sql_befehl)
-        { echo "Ihr Eintrag wurde hinzugefügt."; }
+        if($sql_write){
+            echo "Ihr Eintrag wurde hinzugefügt.";
+        }
     }
     else
     {
-
         die('Keine Verbindung möglich! ');
     }
 //Verbindung beenden
-    mysql_close($datenbank);
+    mysqli_close($datenbank);
 }
 
     ?>
