@@ -3,7 +3,8 @@ Bekommt den File mit welcher JSON Datei er verbunden werden soll.
 Öffnet die übergebene Datei, asynchron mit GET ohne Parameter Übergabe
  */
 function Load(jfile) {
-    json = JSON.parse(loadPage(jfile));
+    json = loadPage(jfile);
+    json=JSON.parse(json.getElementsByTagName("pre").data);
     function loadPage(jsonfile) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", jsonfile, false);
