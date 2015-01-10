@@ -46,7 +46,7 @@ if($name == "Film"){
         //$sql_befehl1 = mysql_query("INSERT INTO FILM (Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('".$_GET["filmtitel"]."','".$_GET["regie"]."','".$_GET["schauspieler"]."', '".$_GET["filmerscheinungsjahr"]."','".$_GET["drehbuch"]."','".$_GET["filmgenre"]."')");
 
         //$sql_test = mysqli_query($datenbank, "SELECT * FROM FILM");
-        $sql_write = mysqli_query($datenbank, "INSERT INTO FILM(Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('$filmtitel','$regie','$schauspieler','$filmerscheinungsjahr','$drehbuch','$fav','$drehbuch')");
+        $sql_write = mysqli_query($datenbank, "INSERT INTO FILM(Ftitel, Regie, Schauspieler, Erscheinungsjahr, Drehbuch, fav, Genre) VALUES ('$filmtitel','$regie','$schauspieler','$filmerscheinungsjahr','$drehbuch','$fav','$filmgenre')");
 
         if($sql_write){
             echo "Ihr Eintrag wurde hinzugefügt.";
@@ -100,7 +100,7 @@ if($name=="Album"){
     {
         echo 'Verbindung erfolgreich: ';
        // $sql_befehl = mysql_query("INSERT INTO ALBUM (ATitel,Jahr,Songs,Interpreter,fav,Genre) VALUES ('".$_GET["albumtitel"]."','".$_GET["musicerscheinungsjahr"]."','".$_GET["songs"]."','".$_GET["interpreter"]."','".$_GET["musicfavorit"]."','".$_GET["musicgenre"]."')");
-        $sql_write = mysqli_query($datenbank, "INSERT INTO ALBUM(ATitel, Jahr, Songs, Interpreter, fav, Genre) VALUES ('$albumtitel','$musikerscheinungsjahr','$songs','$interpreter','$fav','Metal')");
+        $sql_write = mysqli_query($datenbank, "INSERT INTO ALBUM(ATitel, Jahr, Songs, Interpreter, fav, Genre) VALUES ('$albumtitel','$musikerscheinungsjahr','$songs','$interpreter','$fav',$musikgenre)");
 
         if($sql_write){
             echo "Ihr Eintrag wurde hinzugefügt.";
