@@ -1,0 +1,63 @@
+@media screen{
+    #streifen{
+        height: 90%;
+        border-right: 5px white solid;
+        z-index: 6000;
+        margin: 10px auto;
+        position: absolute;
+        left: 50%;
+    }
+
+
+<!--
+    .boxy{
+        font-family: "Arial";
+        margin: 70px auto;
+        border: 8px solid white;
+        font-size: 50px;
+        text-align: center;
+        width: 600px;
+        height: 100px;
+    }
+
+    .left{
+        width: 300px;
+        height: 100px;
+        margin-right: 500px;
+        line-height: 120px;
+        text-align: center;
+    }
+
+    .left:hover{
+        color: black;
+        background-color: rgb(165,169,230);
+        cursor: pointer;
+    }
+
+    .right{
+        width: 300px;
+        height: 100px;
+        float: right;
+        position: relative;
+        top: -100px;
+        line-height: 120px;
+        text-align: center;
+    }
+
+
+    .right:hover{
+        color: black;
+        background-color: rgb(165,169,230);
+        cursor: pointer;
+    } -->
+
+    img{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        border: 5px white solid;
+        width: 10px;
+    }
+
+
+}

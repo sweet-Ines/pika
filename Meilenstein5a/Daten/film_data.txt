@@ -1,0 +1,16 @@
+Filmfavoriten:
+
+Filmtitel, Regie, Drehbuch, Erscheinungsjahr, Genre
+
+A Clockwork Orange, Stanley , Stanley Kubrick, 1971, Komödie
+Love Exposure, Haruo Umekawa, Sion Sono, 2008, Psycho
+Richy Guitar, Michael Laux, Michael Laux, 1985, Komödie
+Inglourious Basterds, Quentin Tarantino, Quentin Tarantino, 2009, Komödie
+Pulp Fiction, Quentin Tarantino, Quentin Tarantino, 1994, Psycho
+Léon - der Profi, Luc Besson, Luc Besson, 1994, Romanze
+Das Schicksal ist ein mieser Verräter, Josh Boone, Scott Neustädter, 2014, Romanze
+Tatsächlich ... Liebe, Richard Curtis, Richard, Curtis, 2003, Romanze
+Crank, Mark Neveldine, Mark Neveldine, 2006, Komödie
+Snatch, Guy Ritchie, Guy Ritchie, 2000, Komödie
+Trainspotting, Danny Boyle, John Hodge, 1996, Komödie 
+The Transporter, Louis Leterrier, Luc Besson, 2002, Krimi 

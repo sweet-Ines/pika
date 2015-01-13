@@ -1,0 +1,13 @@
+Musikfavoritenliste:
+Interpreter, Albumtitel, Erscheinungsjahr, Genre
+
+Farin Urlaub, Faszination Weltraum, 2014, Punk
+Die Ärzte, Planet Punk, 1995, Punk
+The Offspring, Smash, 1994, Punk
+Blink 182, Enema of the State, 1999, Punk
+Rise Against, Siren Song of the Counter Culture, 2004, Punk
+Vampire Weekend, Vampire Weekend, 2007, Punk
+Bouncing Souls, How I spent my summer vacation, 2001, Punk
+Beatsteaks, Living Targets, 2002, Punk
+Bloc Party, Silent Alarm, 2005, Punk
+WIZO, Anderster, 2004, Punk
