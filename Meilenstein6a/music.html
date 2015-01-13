@@ -1,0 +1,73 @@
+<html>
+<link rel = "stylesheet" media="screen" href="CSS/music_film.css"/>
+<link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
+<script type="text/javascript" src="JavaScript/ueberpruefung.js"></script>
+
+<head>
+    <title>Music</title>
+    <meta charset="utf-8"/>
+    <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
+    <div class="mitte">
+        <table>
+            <tr>
+                <td><h1>Music</h1></td><td><p><a href="home.html">(zur&uuml;ck)</a></p></td>
+                <td><p><a href="favoriten.html" id="weis">(Meine Favoriten)</a></p></td>
+            </tr>
+        </table>
+    </div>
+
+
+</head>
+<body>
+<form action="php/immdb.php" method="get" name="form" id="music" onsubmit="return validateForm()" novalidate='true'>
+<table id="weiß">
+
+    <tr>
+        <td><div class="size">Interpreter</div></td>
+        <td><input type = "text" name="interpreter" size = "30" minlength="2" maxlength = "50" required="true" pattern='^[^0-9\.\,\"\?\!\;\:\#\$\%\&\(\)\*\+\-\/\<\>\=\@\[\]\\\^\_\{\}\|\~]+$'/> </td>
+    </tr>
+
+    <tr>
+        <td><div class="size">Albumtitel</div></td>
+        <td><input type = "text" name="albumtitel" size = "30" minlength="2" maxlength = "50" required="true" pattern='^[^\.\,\"\?\!\;\:\#\$\%\&\(\)\*\+\-\/\<\>\=\@\[\]\\\^\_\{\}\|\~]+$'/> </td>
+    </tr>
+
+    <tr>
+        <td><div class="size">Erscheinungsjahr</div></td>
+        <td><input type = "date" name="musicerscheinungsjahr" size = "30" minlength="2" max="2014-12-31" required="true" pattern="([0-9])+"/> </td>
+    </tr>
+
+    <tr>
+        <td><div class="size">Songs</div></td>
+        <td><textarea name = "songs" cols="32" rows ="5" required="true" pattern="^[a-zA-Z,]+$"></textarea> </th>
+    </tr>
+
+
+    <tr>
+        <td><div class="size">Genre</div></td>
+        <td><select name="musicgenre" size="1">
+            <option value = "punk">Punk</option>
+            <option value = "metal">Metal</option>
+            <option value = "pop">Pop</option>
+            <option value = "soul">Punk</option>
+            <option value = "hiphop">HipHop</option>
+            <option value = "techno">Techno</option>
+        </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td><div class="size">Als Favorit <br>markieren</div></td>
+        <td><input type ="checkbox" name="musicfavorit" /><br/></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><button type="submit" name="Absenden" value="Album">Album absenden</button></td>
+    </tr>
+
+</table>
+    </form>
+</body>
+
+</html>

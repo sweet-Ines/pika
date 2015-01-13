@@ -1,0 +1,80 @@
+<html>
+<link rel = "stylesheet" media="screen" href="CSS/music_film.css"/>
+<link rel = "stylesheet" media="screen" href="CSS/standart.css"/>
+<script type="text/javascript" src="JavaScript/ueberpruefung.js"></script>
+
+<head>
+    <title>Film</title>
+    <meta charset="utf-8"/>
+    <div id="platzhalter"> <img src="img/025Pikachu_OS_anime_4.png" alt="Pika" width="90px" border="5px" align="right"/> </div>
+    <div class="mitte">
+        <table>
+            <tr>
+                <td><h1>Film</h1></td><td><p><a href="home.html">(zur&uuml;ck)</a></p></td>
+                <td><p><a href="favoriten.html" id="weis">(Meine Favoriten)</a></p></td>
+            </tr>
+        </table>
+    </div>
+
+
+</head>
+<body>
+<form action="php/immdb.php" method="get" name="form" id="film" onsubmit="return validateForm()" novalidate='true'>
+    <table id="weiß">
+
+        <tr>
+            <td><div class="size">Filmtitel</div></td>
+            <td><input type = "text" name="filmtitel" size = "30" minlength="2" maxlength = "50" required="true" pattern="([a-z0-9]|[A-Z0-9])+"/> </td>
+        </tr>
+
+        <tr>
+            <td><div class="size">Regie</div></td>
+            <td><input type = "text" name="regie" size = "30" minlength="2" maxlength = "50" required="true" pattern="((\b[A-Z,ü,ö,ä]{1}[a-z,ü,ö,ä]{2,}).){2,}"/> </td>
+        </tr>
+
+        <tr>
+            <td><div class="size">Drehbuch</div></td>
+            <td><input type = "text" name="drehbuch" size = "30" minlength="2" maxlength = "50" required="true" pattern="((\b[A-Z,ü,ö,ä]{1}[a-z,ü,ö,ä]{2,}).){2,}"/> </td>
+        </tr>
+
+		<tr>
+            <td><div class="size">Erscheinungsjahr</div></td>
+            <td><input type = "date" name="filmerscheinungsjahr" minlength="2" max="2014-12-31" required="true" pattern="([0-9])+"/> </td>
+        </tr>
+
+        <tr>
+            <td><div class="size">Schauspieler</div></td>
+            <td><textarea name = "schauspieler" cols="32" rows ="5"></textarea> </th>
+        </tr>
+
+
+        <tr>
+            <td><div class="size">Genre</div></td>
+            <td><select name="filmgenre" size="1">
+                    <option value="horror" selected="selected">Horror</option>
+                    <option value="psycho">Psycho</option>
+                    <option value="krimi">Krimi</option>
+                    <option value="doku">Doku</option>
+                    <option value="komoedie">Kom&uuml;die</option>
+                    <option value="romanze">Romanze</option>
+                </select><br/>
+            </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><div class="size">Als Favorit <br>markieren</div></td>
+            <td><input type ="checkbox" name="filmfavorit" /><br/></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><button type="submit" name="Absenden" value="Film">Film absenden</button></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+
+</html>
+
